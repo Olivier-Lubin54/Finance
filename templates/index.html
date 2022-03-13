@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+        {{ name }}
+        <div class="jumbotron">
+            <h1>Stock Hub</h1>
+        </div>
+        <div class="container">
+            <div class="section">
+
+                <h2>Possesions</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Holdings</th>
+                        </tr>
+                        <tr>
+                            <th>assets</th>
+                        </tr>
+                        <tr>
+                            <td>{{cash}}</td>
+                        </tr> 
+                    </thead>
+                <tr>Symbol</tr>
+                <tr>Name</tr>
+                <tr>Shares</tr>
+                <tr>Price</tr>
+                <tr>Total</tr>
+                    
+                <tbody>
+                {% for holding in holdings %}
+                <tr> 
+                <td>{{holdings["symbol"]}}</td>
+                <td>{{holdings["name"]}}</td>
+                <td>{{holdings["shares"]}}</td>
+                <td>{{holdings["price"]}}</td>
+                <td>{{holdings["total"]}}</td>
+                </tr>  
+                
+                </tbody>
+                    
+            {% endfor %}
+            </table>
+            
+            
+            </div>
+        </div>
+{% endblock %}
